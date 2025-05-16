@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: muuhc21cl-go-gitops
+  description: This is GitOps manifest for muuhc21cl-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=muuhc21cl-go
+    backstage.io/kubernetes-id: muuhc21cl-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: muuhc21cl-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:muuhc21cl-go
